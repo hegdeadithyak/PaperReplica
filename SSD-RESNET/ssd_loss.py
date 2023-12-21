@@ -40,5 +40,17 @@ class MultiBoxLoss(nn.Module):
 
         pos_idx = gt_label>0;
         pos_loc_idx = pos_idx.unsqueeze(2).expand_as(pred_loc)
+        pos_cls_mask = pos_idx.unsqueeze(2).expand_as(pred_label)
+        neg_cls_mask = neg_idx.unsqueeze(2).expand_as(pred_label)
+
+        conf_p = pred_label[(pos_cls_mask+neg_cls_mask).gt(0)].view(-1, self.num_classes)
+        target = gt_label[(pos_idx+neg_idx).gt(0)]
+
+        cls_loss = F.cross_entropy(conf_p, target, reduction='sum')
+        N = pos_idx.long().sum()
+
+        loc_loss /= N
+        cls_loss /= N
 
 
+        return loc_loss, cls_loss
