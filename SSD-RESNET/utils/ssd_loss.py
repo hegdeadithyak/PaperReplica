@@ -38,7 +38,10 @@ class MultiBoxLoss(nn.Module):
 
         num_batch = pred_loc.shape[0]
 
-        pos_idx = gt_label>0;
+        pos_idx = gt_label>0
+        
+        neg_idx = hard_negatives(pred_label,gt_label,pos_idx,self.neg_ratio)
+
         pos_loc_idx = pos_idx.unsqueeze(2).expand_as(pred_loc)
         pos_cls_mask = pos_idx.unsqueeze(2).expand_as(pred_label)
         neg_cls_mask = neg_idx.unsqueeze(2).expand_as(pred_label)
