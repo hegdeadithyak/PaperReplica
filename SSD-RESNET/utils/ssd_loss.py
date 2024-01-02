@@ -54,3 +54,4 @@ class MultiBoxLoss(nn.Module):
 
 
         return loc_loss, cls_loss
+
