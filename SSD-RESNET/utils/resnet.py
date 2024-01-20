@@ -33,11 +33,11 @@ class BottleNeck(nn.Module):
         
 
 class ResNet(nn.Module):
-    def __init__(self,block,num_blocks,num_classes=2): #We are testing this on fire and smoke so 2 you may edit this for personal use cases
+    def __init__(self,block,num_blocks,num_classes=2): 
         super(ResNet,self).__init__()
         self.in_planes = 64
 
-        self.conv1 = nn.Conv2d(3,64,kernel_size=7,stride=2,padding=3,bias=False) #3 is the number of channels in the image
+        self.conv1 = nn.Conv2d(3,64,kernel_size=7,stride=2,padding=3,bias=False) 
         self.bn1   = nn.BatchNorm2d(64)
         self.maxpool = nn.MaxPool2d(kernel_size=3,stride=2,padding=1)
         self.relu1 = nn.ReLU(inplace=True)
@@ -49,13 +49,13 @@ class ResNet(nn.Module):
         self.avgpool = nn.AdaptiveAvgPool2d((1,1))
         self.fc = nn.Linear(512*block.expansion,num_classes)
 
-    def _make_layer(self,block,planes,num_blocks,stride): #This function is used to create the layers
-        strides = [stride] + [1]*(num_blocks-1) #stride is applied to the first layer only
-        layers = [] #This is the list of layers
-        for stride in strides:#This loop is used to create the layers
-            layers.append(block(self.in_planes,planes,stride))#This is the layer
-            self.in_planes = planes*block.expansion#This is the number of input planes for the next layer
-        return nn.Sequential(*layers) #This returns the layers
+    def _make_layer(self,block,planes,num_blocks,stride): 
+        strides = [stride] + [1]*(num_blocks-1) 
+        layers = [] 
+        for stride in strides:
+            layers.append(block(self.in_planes,planes,stride)) 
+            self.in_planes = planes*block.expansion
+        return nn.Sequential(*layers) 
     
     def forward(self,x):
         out = self.relu1(self.bn1(self.conv1(x)))
@@ -70,16 +70,11 @@ class ResNet(nn.Module):
         return out
     
 def ResNet50():
-    
     return ResNet(BottleNeck,[3,4,6,3])
 
 def ResNet101():
-    
     return ResNet(BottleNeck,[3,4,23,3])
     
 if __name__ =="__main__":
     net = ResNet50()
-    y = net(torch.randn(1,3,224,224))
-    print(y.size())
-    
-
+      
