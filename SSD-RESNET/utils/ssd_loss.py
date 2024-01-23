@@ -22,3 +22,13 @@ def hard_neg(logits,labels,pos,neg_ratio):
     neg = rank<num_neg.expand_as(rank)
 
     return neg
+
+
+class MultiBoxLoss(nn.Module):
+    def __init__(self,num_classes=3,neg_ratio=3):
+        super(MultiBoxLoss,self).__init__()
+        self.num_classes = num_classes
+        self.neg_ratio  = neg_ratio
+
+    def forward(self,pred_loc,pred_label,gt_loc,gt_label):
+        
