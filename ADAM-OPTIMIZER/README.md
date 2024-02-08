@@ -16,6 +16,11 @@ This repository contains the code to replicate the results presented in the pape
 - Original Paper: D. P. Kingma and J. Ba, ["ADAM: A Method for Stochastic Optimization"](https://arxiv.org/abs/1412.6980)
 - Original Implementation: [https://github.com/dsgiitr/adam-optimizer](https://github.com/dsgiitr/adam-optimizer)
 
+## To-do
+
+- [ ] Bias Correction set to True
+- [ ] Plot Training Graphs w.r.t RMSPROP
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
