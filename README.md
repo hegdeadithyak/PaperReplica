@@ -9,7 +9,7 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
 - Python 3.x
 - NumPy
 - Matplotlib (for visualization, optional)
-- TensorFlow/PyTorch (optional, depending on the paper being replicated)
+- PyTorch (optional, depending on the paper being replicated)
 
 ## Usage
 
