@@ -1,7 +1,7 @@
-import numpy 
+import numpy as np
 import stack
 
-def point-form(bboxes):
+def point_form(bboxes):
 
     tl = bboxes[:,:2] - bboxes[:,2:]/2 #Top Left Corner
     br = bboxes[:,:2] + bboxes[:,2:]/2 #Bottom Right Corner
