@@ -32,7 +32,7 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
 
 - `SSD-RESNET/`: Contains code for replicating the SSD-RESNET paper (Work in Progress).
 - `Vision-Transformer/`: Contains code for replicating the Vision-Transformer paper (Work in Progress).
-- `ADAM-OPTIMIZER/`: Contains code for replicating the ADAM paper (Work in Progress).
+- `ADAM-OPTIMIZER/`: Contains code for replicating the ADAM paper.
 - `README.md`: This file.
 
 ## References
