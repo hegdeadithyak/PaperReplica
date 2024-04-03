@@ -33,8 +33,15 @@ train_dataloader, test_dataloader, class_names = data_setup.create_dataloaders(
     batch_size=BATCH_SIZE
 )
 
-image_batch, label_batch = next(iter(train_dataloader))
+image_batch, label_batch = next(iter(train_dataloader)) #next(iter(train_dataloader)) is a generator in which next is used to get the next element in the generator iter is used to convert the object into an iterator
 
 image, label = image_batch[0], label_batch[0]
 
-print(image.shape, label)
+print(f"Image shape: {image.shape}\nLabel: {label}\nClass name: {class_names[label]}")
+
+# plt.imshow(image.permute(1, 2, 0)) # rearrange image dimensions to suit matplotlib [color_channels, height, width] -> [height, width, color_channels]
+# plt.title(class_names[label])
+# plt.axis(False)
+# plt.show()
+
+
