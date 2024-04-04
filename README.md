@@ -4,12 +4,7 @@
 
 Welcome to PaperReplica! We specialize in replicating research papers in the field of AI & ML. In this repository, we are currently working on replicating three papers: SSD-RESNET, Vision-Transformer, and ADAM.
 
-## Requirements
 
-- Python 3.x
-- NumPy
-- Matplotlib (for visualization, optional)
-- PyTorch (optional, depending on the paper being replicated)
 
 ## Usage
 
@@ -30,10 +25,10 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
 
 ## Directory Structure
 
-- `SSD-RESNET/`: Contains code for replicating the SSD-RESNET paper (Work in Progress).
-- `Vision-Transformer/`: Contains code for replicating the Vision-Transformer paper (Work in Progress).
-- `ADAM-OPTIMIZER/`: Contains code for replicating the ADAM paper.
-- `README.md`: This file.
+- [ ] `SSD-RESNET/`: Contains code for replicating the SSD-RESNET paper.
+- [x] `Vision-Transformer/`: Contains code for replicating the Vision-Transformer paper.
+- [x] `ADAM-OPTIMIZER/`: Contains code for replicating the ADAM paper.
+
 
 ## References
 
