@@ -2,7 +2,7 @@
 
 ## Overview
 
-Welcome to PaperReplica! We specialize in replicating research papers in the field of AI & ML. In this repository, we are currently working on replicating three papers: SSD-RESNET, Vision-Transformer, and ADAM.
+Welcome to PaperReplica! We specialize in replicating research papers in the field of AI & ML.
 
 
 
