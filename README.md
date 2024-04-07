@@ -32,7 +32,7 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
 
 ## References
 
-- Original SSD-RESNET Paper: [Insert SSD-RESNET Paper Link] ["Object detection based on SSD-ResNet"](https://ieeexplore.ieee.org/document/9073753)
+- Original SSD-RESNET Paper:["Object detection based on SSD-ResNet"](https://ieeexplore.ieee.org/document/9073753)
 - Original Vision-Transformer Paper: ["An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"](https://arxiv.org/abs/2010.11929)
 - Original ADAM Paper: D. P. Kingma and J. Ba, ["ADAM: A Method for Stochastic Optimization"](https://arxiv.org/abs/1412.6980)
 
