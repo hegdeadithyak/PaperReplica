@@ -45,6 +45,13 @@ print(f"Image shape: {image.shape}\nLabel: {label}\nClass name: {class_names[lab
 # plt.axis(False)
 # plt.show()
 
+# To - do :
+
+# Patch Embeding --> done
+# MSA (Multi Self Attention)
+# MLP (Multi Layer Perceptron)
+# Layer Norm
+
 
 class PatchEmebedding(nn.Module):
     """
@@ -87,10 +94,10 @@ class PatchEmebedding(nn.Module):
 
 patchiee = PatchEmebedding()
 
-image = image.unsqueeze(0)
-print(f"Input image shape: {image.shape}")
-patch_embedded_image = patchiee(image)
-print(f"Output patch embedding shape: {patch_embedded_image.shape}")
+# image = image.unsqueeze(0)
+# print(f"Input image shape: {image.shape}")
+# patch_embedded_image = patchiee(image)
+# print(f"Output patch embedding shape: {patch_embedded_image.shape}")
 
 # random_input_image = (1, 3, 224, 224)
 # print(summary(PatchEmebedding(),
