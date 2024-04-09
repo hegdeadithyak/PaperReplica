@@ -15,7 +15,7 @@ Before running the `train.py` script, make sure you have the following prerequis
 
 To train the Vision Transformer model, follow these steps:
 
-1. Clone this repository:
-
-   ```bash
-   git clone https://github.com/your-username/your-repo.git
+1. Install Requirements :
+   ``` pip install -r requirements.txt```
+2. Run train.py:
+   ```python3 train.py```
