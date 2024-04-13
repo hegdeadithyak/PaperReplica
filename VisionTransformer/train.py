@@ -6,10 +6,9 @@ from going_modular.going_modular import data_setup, engine
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-image_path = "VisionTransformer/data/pizza_steak_sushi"
+train_dir = "VisionTransformer/data/pizza_steak_sushi/train"
+test_dir = "VisionTransformer/data/pizza_steak_sushi/test"
 
-train_dir = image_path + "/train"
-test_dir = image_path + "/test"
 
 IMG_SIZE = 224
 BATCH_SIZE = 32
@@ -68,15 +67,32 @@ class PatchEmebedding(nn.Module):
 
 
 class MAS(nn.Module):
+    """Creates a multi-head self-attention block ("MSA block" for short)."""
+
     def __init__(
-        self, embedding_dim: int = 768, num_heads: int = 12, attn_dropout: float = 0
+        self,
+        embedding_dim: int = 768,  # Hidden size D from Table 1 for ViT-Base
+        num_heads: int = 12,  # Heads from Table 1 for ViT-Base
+        attn_dropout: float = 0,
     ):
         super().__init__()
+        self.layer_norm = nn.LayerNorm(normalized_shape=embedding_dim)
+        self.multihead_attn = nn.MultiheadAttention(
+            embed_dim=embedding_dim,
+            num_heads=num_heads,
+            dropout=attn_dropout,
+            batch_first=True,
+        )
 
     def forward(self, x):
-        x = nn.LayerNorm(x)
-        att_out, _ = nn.MultiheadAttention(x, x, x)
-        return att_out
+        x = self.layer_norm(x)
+        attn_output, _ = self.multihead_attn(
+            query=x,  # query embeddings
+            key=x,  # key embeddings
+            value=x,  # value embeddings
+            need_weights=False,
+        )  # do we need the weights or just the layer outputs?
+        return attn_output
 
 
 class MLP(nn.Module):
@@ -141,16 +157,11 @@ class Vit(nn.Module):
         self.class_embedding = nn.Parameter(
             data=torch.randn(1, 1, embedding_dim), requires_grad=True
         )
-
+        self.patch_embedding = PatchEmebedding(in_channels, patch_size, embedding_dim)
         self.position_embedding = nn.Parameter(
             data=torch.randn(1, self.num_patches + 1, embedding_dim), requires_grad=True
         )
-
-        self.embedding_dropout = nn.Dropout(p=embedding_dropout)
-
-        self.patch_embedding = PatchEmebedding(
-            in_channels=in_channels, patch_size=patch_size, embedding_dim=embedding_dim
-        )
+        self.embedding_dropout = nn.Dropout(embedding_dropout)
 
         self.transformer_encoder = nn.Sequential(
             *[
