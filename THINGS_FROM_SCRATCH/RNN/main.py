@@ -1,8 +1,5 @@
 import tensorflow as tf
 
-
-
-
 class RNN(tf.keras.layers.Layer):
     def add_weights(self,shape):
         return tf.Variable(tf.random.normal(shape,stddev=0.01))
