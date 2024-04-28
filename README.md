@@ -30,6 +30,7 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
 - [x] `ADAM-OPTIMIZER/`: Contains code for replicating the ADAM paper.
 
 ## Hitlist
+- [ ] `Attention is All you need` : My personal Favourite.
 - [ ] `RNN Based on Encoder and Decode` : Contains code for RNN Based Encoder-Decode  
 
 ## References
@@ -39,6 +40,7 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
 - Original ADAM Paper: D. P. Kingma and J. Ba, ["ADAM: A Method for Stochastic Optimization"](https://arxiv.org/abs/1412.6980)
 - Original RNN based Encoder-Decoder [Learning Phrase Representations using RNN Encoder–Decoder
 for Statistical Machine Translation](https://arxiv.org/pdf/1406.1078)
+- Origiinal Attention is All you Need ["Attention is All you Neeed"](https://arxiv.org/pdf/1706.03762)
 
 ## License
 
