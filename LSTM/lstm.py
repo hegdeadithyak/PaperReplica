@@ -4,27 +4,43 @@ import tensorflow as tf
 inputs = np.random.random((32, 10, 8))
 
 
+'''
+LSTMCell class is a simple implementation of LSTM cell.
+It has the following methods:
+1. __init__: Initializes the LSTM cell with input size and hidden size.
+2. sigmoid: Computes the sigmoid activation function.
+3. tanh: Computes the tanh activation function.
+4. forward: Computes the forward pass of the LSTM cell.
+
+The forward pass of the LSTM cell is computed as follows:
+1. Compute the input, forget, and output gates.
+2. Compute the candidate cell state.
+3. Update the cell state and hidden state.
+
+Backpropagation through the LSTM cell is not implemented in this class.
+'''
+
 class LSTMCell:
     def __init__(self, input_size, hidden_size) -> None:
         self.input_size = input_size
         self.hidden_size = hidden_size
 
         # Initialize weights
-        self.W_i = np.random.randn(input_size, hidden_size)
-        self.W_f = np.random.randn(input_size, hidden_size)
-        self.W_o = np.random.randn(input_size, hidden_size)
-        self.W_c = np.random.randn(input_size, hidden_size)
+        self.W_i = np.random.randn(input_size, hidden_size) # Input Gate Weights
+        self.W_f = np.random.randn(input_size, hidden_size) # Forget Gate Weights
+        self.W_o = np.random.randn(input_size, hidden_size) # Output Gate Weights
+        self.W_c = np.random.randn(input_size, hidden_size) # Cell Gate Weights
 
-        self.U_i = np.random.randn(hidden_size, hidden_size)
-        self.U_f = np.random.randn(hidden_size, hidden_size)
-        self.U_o = np.random.randn(hidden_size, hidden_size)
-        self.U_c = np.random.randn(hidden_size, hidden_size)
+        self.U_i = np.random.randn(hidden_size, hidden_size) # Input Gate Weights
+        self.U_f = np.random.randn(hidden_size, hidden_size) # Forget Gate Weights
+        self.U_o = np.random.randn(hidden_size, hidden_size) # Output Gate Weights
+        self.U_c = np.random.randn(hidden_size, hidden_size) # Cell Gate Weights 
 
         # Initialize biases
-        self.b_i = np.zeros(hidden_size)
-        self.b_f = np.zeros(hidden_size)
-        self.b_o = np.zeros(hidden_size)
-        self.b_c = np.zeros(hidden_size)
+        self.b_i = np.zeros(hidden_size) # Input Gate Bias
+        self.b_f = np.zeros(hidden_size) # Forget Gate Bias
+        self.b_o = np.zeros(hidden_size) # Output Gate Bias
+        self.b_c = np.zeros(hidden_size) # Cell Gate Bias
 
         # Initialize cell state and hidden state
         self.cell_state = np.zeros(hidden_size)
