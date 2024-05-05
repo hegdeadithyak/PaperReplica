@@ -14,14 +14,8 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
    git clone https://github.com/your-username/PaperReplica.git
    cd PaperReplica
    ```
-
-2. Choose the paper you want to replicate and navigate to its directory:
-
-   ```bash
-   cd SSD-RESNET  # or Vision-Transformer, or ADAM
-   ```
-
-3. Follow the instructions in the README of the respective paper's directory to replicate the experiments.
+   
+2. Follow the instructions in the README of the respective paper's directory to replicate the experiments.
 
 ## Directory Structure
 
