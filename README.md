@@ -19,13 +19,14 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
 
 ## Directory Structure
 
-- [ ] `SSD-RESNET/`: Contains code for replicating the SSD-RESNET paper.
 - [x] `Vision-Transformer/`: Contains code for replicating the Vision-Transformer paper.
 - [x] `ADAM-OPTIMIZER/`: Contains code for replicating the ADAM paper.
 
 ## Hitlist
+
 - [ ] `Attention is All you need` : My personal Favourite.
 - [ ] `RNN Based on Encoder and Decode` : Contains code for RNN Based Encoder-Decode  
+- [ ] `SSD-RESNET/`: Contains code for replicating the SSD-RESNET paper.
 
 ## References
 
