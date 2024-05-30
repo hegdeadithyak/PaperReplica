@@ -17,11 +17,6 @@ Welcome to PaperReplica! We specialize in replicating research papers in the fie
    
 2. Follow the instructions in the README of the respective paper's directory to replicate the experiments.
 
-## Directory Structure
-
-- [x] `Vision-Transformer/`: Contains code for replicating the Vision-Transformer paper.
-- [x] `ADAM-OPTIMIZER/`: Contains code for replicating the ADAM paper.
-
 ## Hitlist
 
 - [ ] `Attention is All you need` : My personal Favourite.
